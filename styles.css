@@ -283,3 +283,32 @@ footer{
 .contact-text[target="_blank"] {
     cursor: pointer;
 }
+/* -------------------------------------------------
+   Language switcher (flags)
+   ------------------------------------------------- */
+.lang-switcher {
+    display: flex;
+    gap: 12px;
+    justify-content: center;      /* κεντράρισμα */
+    margin: 20px 0;
+}
+
+/* Κάθε σημαία είναι link */
+.lang-switcher a {
+    display: inline-block;
+    width: 32px;
+    height: 24px;
+    overflow: hidden;
+}
+
+/* Χρήση flag-icons CDN */
+.flag-icon {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Optional: μικρό hover effect */
+.lang-switcher a:hover .flag-icon {
+    opacity: 0.8;
+}
