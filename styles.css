@@ -156,7 +156,16 @@ footer{
 /* Ειδικό χρώμα για το Instagram (αν θέλεις διαφορετικό) */
 .ig-link { color: #C13584; }      /* ροζ‑μωβ του Instagram */
 .ig-link:hover { color: #e04aa5; }
+/* ---- Icons inside contact info ---- */
+.contact-info i {
+    margin-right: 6px;          /* χώρος μεταξύ εικονιδίου & κειμένου */
+    vertical-align: middle;    /* ευθυγράμμιση με το κείμενο */
+    color: #555;               /* προεπιλεγμένο χρώμα – αλλάξτε το αν θέλετε */
+}
 
+/* Χρώμα για WhatsApp και Email (προαιρετικό) */
+.whatsapp-icon { color: #25D366; }   /* πράσινο WhatsApp */
+.email-icon    { color: #D44638; }   /* κόκκινο email */
 /* Μικρό margin μεταξύ των social items */
 .contact-info p {
     margin: 0.8rem 0;
