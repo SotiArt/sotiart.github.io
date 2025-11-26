@@ -5,157 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SotiArt</title>
 
-    <!-- Μικρό στυλ για κεντρική στοίχιση και όμορφη εμφάνιση -->
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
-            background-color: #fafafa;
-            color: #333;
-        }
-        header {
-            padding: 30px 0;
-        }
-        header img {
-            max-width: 250px;          /* πλάτος λογότυπου */
-            height: auto;
-            margin-top: 20px;
-        }
-        h1 {
-            margin-top: 0;
-            font-size: 2.2rem;
-            color: #222;
-        }
-        p {
-            font-size: 1.1rem;
-            line-height: 1.5;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-    </style>
+    <!-- Σύνδεση του εξωτερικού CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <body>
-    <!-- ΕΔΩ ΠΡΟΣΘΕΤΑΙ Η ΜΠΑΡΑ -->
-    <header> … </header>
-    …
+
+    <!-- ==== Navigation (responsive) ==== -->
+    <nav class="nav">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+
+        <div class="nav-links">
+            <a href="index.html">Αρχική</a>
+            <a href="categories.html">Κατηγορίες</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Επικοινωνία</a>
+        </div>
+    </nav>
+
+    <!-- ==== Header με λογότυπο ==== -->
+    <header>
+        <!-- Βεβαιώσου ότι το όνομα του αρχείου είναι ακριβώς αυτό -->
+        <img src="sotiart-logo.jpeg" alt="SotiArt Logo">
+        <h1>Καλώς ήρθατε στο SotiArt!</h1>
+        <p>
+            Χειροποίητα κοσμήματα & τέχνη. Εξερευνήστε τη συλλογή,
+            εγγραφείτε στο newsletter και αγοράστε online.
+        </p>
+    </header>
+
+    <!-- ==== Gallery (προσωρινά placeholders) ==== -->
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="grid">
+            <img src="ring1.jpg"      alt="Κολιέ 1">
+            <img src="bracelet1.jpg"  alt="Βραχιόλι 1">
+            <img src="earring1.jpg"   alt="Σκουλαρίκι 1">
+            <img src="necklace1.jpg"  alt="Κολιέ 2">
+        </div>
+    </section>
+
+    <!-- ==== Footer ==== -->
+    <footer>
+        © <script>document.write(new Date().getFullYear())</script> — SotiArt. Όλα τα δικαιώματα διατηρούνται.
+    </footer>
+
 </body>
-<!-- Navigation Bar – αρχή -->
-<nav style="
-    background:#222;
-    padding:10px 0;
-    text-align:center;
-    font-family:Arial,Helvetica,sans-serif;
-">
-    <a href="index.html"      style="color:#fff;margin:0 15px;text-decoration:none;">Αρχική</a>
-    <a href="categories.html"style="color:#fff;margin:0 15px;text-decoration:none;">Κατηγορίες</a>
-    <a href="gallery.html"   style="color:#fff;margin:0 15px;text-decoration:none;">Gallery</a>
-    <a href="contact.html"   style="color:#fff;margin:0 15px;text-decoration:none;">Επικοινωνία</a>
-</nav>
-<!-- Navigation Bar – τέλος -->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SotiArt</title>
-</head>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SotiArt</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<nav class="nav">
-    <input type="checkbox" id="nav-toggle" class="nav-toggle">
-    <label for="nav-toggle" class="nav-toggle-label">
-        <span></span>
-    </label>
-
-    <div class="nav-links">
-        <a href="index.html">Αρχική</a>
-        <a href="categories.html">Κατηγορίες</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Επικοινωνία</a>
-    </div>
-</nav>
-/* ----------- Responsive Nav (Hamburger) ----------- */
-.nav{
-    position:relative;
-    background:#222;
-    padding:10px 0;
-    text-align:left;
-}
-.nav-toggle{
-    display:none;
-}
-.nav-toggle-label{
-    position:absolute;
-    top:12px;
-    right:15px;
-    display:block;
-    width:30px;
-    height:30px;
-    cursor:pointer;
-}
-.nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after{
-    display:block;
-    background:#fff;
-    height:3px;
-    width:100%;
-    border-radius:2px;
-    position:absolute;
-}
-.nav-toggle-label span{
-    top:50%;
-    transform:translateY(-50%);
-}
-.nav-toggle-label span::before{
-    content:"";
-    top:-10px;
-}
-.nav-toggle-label span::after{
-    content:"";
-    top:10px;
-}
-
-/* Links container – κρύβεται σε κινητά */
-.nav-links{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-.nav-links a{
-    color:#fff;
-    margin:0 15px;
-    text-decoration:none;
-}
-
-/* Όταν το checkbox είναι checked (menu ανοιχτό) */
-.nav-toggle:checked + .nav-toggle-label + .nav-links{
-    flex-direction:column;
-    align-items:center;
-}
-.nav-toggle:checked + .nav-toggle-label + .nav-links a{
-    margin:10px 0;
-}
-
-/* Tablet/desktop – κρύβουμε το hamburger */
-@media (min-width:600px){
-    .nav-toggle-label{
-        display:none;
-    }
-    .nav-links{
-        display:flex !important;
-        justify-content:center;
-    }
-}
-    <div class="grid">
-    <img src="ring1.jpg" alt="Κολιέ 1">
-    <img src="bracelet1.jpg" alt="Βραχιόλι 1">
-    <img src="earring1.jpg" alt="Σκουλαρίκι 1">
-    <img src="necklace1.jpg" alt="Κολιέ 2">
-</div>
+</html>
