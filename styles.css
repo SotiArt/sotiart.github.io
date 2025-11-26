@@ -192,3 +192,49 @@ footer{
 .icon-link:hover {
     opacity: 0.8;
 }
+/* -------------------------------------------------
+   ΣΤΥΛ ΓΙΑ ΤΑ ΣΤΟΙΧΕΙΑ ΕΠΙΚΟΙΝΩΝΙΑΣ (εικονίδιο + κείμενο)
+   ------------------------------------------------- */
+.contact-list {
+    /* κέντρο και περιορισμένο πλάτος – ήδη στο HTML, αλλά εδώ για fallback */
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-item {
+    display: flex;               /* εικονίδιο και κείμενο στην ίδια γραμμή */
+    align-items: center;         /* κατακόρυφη στοίχιση */
+    margin: 12px 0;              /* απόσταση μεταξύ των γραμμών */
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Μέγεθος εικονιδίων – 1.4em ≈ 22‑24 px (προσαρμόσιμο) */
+.contact-item i {
+    font-size: 1.4em;
+    margin-right: 10px;          /* χώρος μεταξύ εικονιδίου & κειμένου */
+    color: #555;                 /* προεπιλεγμένο χρώμα */
+}
+
+/* Χρώματα ανά πλατφόρμα (προαιρετικά) */
+.whatsapp-icon { color: #25D366; }   /* πράσινο WhatsApp */
+.email-icon    { color: #D44638; }   /* κόκκινο email */
+.fb-icon       { color: #4267B2; }   /* μπλε Facebook */
+.ig-icon       { color: #C13584; }   /* ροζ‑μωβ Instagram */
+
+/* Στυλ για το κείμενο (links) */
+.contact-text {
+    text-decoration: none;
+    color: inherit;               /* κληρονομεί το χρώμα του .contact-item */
+    transition: color 0.2s ease;
+}
+
+/* Hover effect στα links */
+.contact-text:hover {
+    color: #0077cc;               /* ελαφρύ μπλε όταν περνάει το ποντίκι */
+}
+
+/* Αν θέλεις τα links να ανοίγουν σε νέο tab (για email/whatsapp) */
+.contact-text[target="_blank"] {
+    cursor: pointer;
+}
