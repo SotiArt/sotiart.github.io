@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Επικοινωνία – SotiArt</title>
+
+    <!-- Σύνδεση στο κοινό stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Font Awesome (εικονίδια) -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-pbK+5XgUuWQzM6eZfF+VZKkZrO5c3N6J+6cK5tHcB9jK5d5e+K5c5Zp+6cK5tHcB9jK5d5e+K5c5Zp+6cK5tHcB9jK5d5e=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+</head>
+
+<body>
+
+    <!-- ==== Navigation (ακριβώς όπως στα άλλα αρχεία) ==== -->
+    <nav class="nav">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+        <div class="nav-links">
+            <a href="index.html">Αρχική</a>
+            <a href="categories.html">Κατηγορίες</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Επικοινωνία</a>
+        </div>
+    </nav>
+
+    <!-- ==== Κύριο περιεχόμενο ==== -->
+    <section style="padding:30px 0;">
+        <h1>Επικοινωνία</h1>
+
+        <!-- 1️⃣ Στοιχεία επικοινωνίας με εικονίδια -->
+        <div class="contact-info" style="margin-bottom:30px; line-height:1.8;">
+            <p>
+                <i class="fas fa-phone-alt" style="margin-right:8px;"></i>
+                <strong>WhatsApp:</strong>
+                <a href="https://wa.me/306946273842" target="_blank">+30 694 627 3842</a>
+            </p>
+
+            <p>
+                <i class="fas fa-envelope" style="margin-right:8px;"></i>
+                <strong>Email:</strong>
+                <a href="mailto:sotiartistry@gmail.com">sotiartistry@gmail.com</a>
+            </p>
+
+            <p>
+                <i class="fas fa-map-marker-alt" style="margin-right:8px;"></i>
+                <strong>Διεύθυνση:</strong> Basel, Switzerland
+            </p>
+
+            <p>
+                <i class="fab fa-facebook-f" style="margin-right:8px;"></i>
+                <strong>Facebook:</strong>
+                <a href="https://www.facebook.com/profile.php?id=61572979960172" target="_blank">
+                    facebook.com/profile.php?id=61572979960172
+                </a>
+            </p>
+
+            <p>
+                <i class="fab fa-instagram" style="margin-right:8px;"></i>
+                <strong>Instagram:</strong>
+                <a href="https://www.instagram.com/sotiartistry_/" target="_blank">
+                    @sotiartistry_
+                </a>
+            </p>
+        </div>
+
+        <!-- 2️⃣ Demo φόρμα επικοινωνίας (δεν στέλνει email – είναι μόνο για εμφάνιση) -->
+        <div class="form-wrapper">
+            <form>
+                <input type="text" name="name" placeholder="Το όνομά σου" required>
+                <input type="email" name="email" placeholder="Το email σου" required>
+                <textarea name="message" rows="4" placeholder="Το μήνυμά σου" required></textarea>
+                <button type="submit">Αποστολή</button>
+            </form>
+            <p style="font-size:0.9rem;color:#777;margin-top:10px;">
+                *(Αυτή η φόρμα είναι μόνο demo. Για πραγματική αποστολή, θα χρειαστείς υπηρεσία όπως Formspree, Netlify Forms ή Google Forms.)*
+            </p>
+        </div>
+    </section>
+
+    <!-- ==== Footer ==== -->
+    <footer>
+        © <script>document.write(new Date().getFullYear())</script> — SotiArt. Όλα τα δικαιώματα διατηρούνται.
+    </footer>
+
+</body>
+</html>
