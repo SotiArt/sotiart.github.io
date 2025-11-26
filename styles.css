@@ -170,3 +170,25 @@ footer{
 .contact-info p {
     margin: 0.8rem 0;
 }
+/* ---- Εικονίδια επικοινωνίας (μόνο icons) ---- */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;               /* απόσταση μεταξύ των εικονιδίων */
+}
+
+.icon-link {
+    color: #555;            /* προεπιλεγμένο χρώμα */
+    transition: color 0.2s ease;
+}
+
+/* Χρώματα ανά πλατφόρμα (προαιρετικά) */
+.whatsapp-icon { color: #25D366; }   /* πράσινο WhatsApp */
+.email-icon    { color: #D44638; }   /* κόκκινο email */
+.fb-link       { color: #4267B2; }   /* μπλε Facebook */
+.ig-link       { color: #C13584; }   /* ροζ‑μωβ Instagram */
+
+/* Hover – ελαφριά αλλαγή φωτεινότητας */
+.icon-link:hover {
+    opacity: 0.8;
+}
