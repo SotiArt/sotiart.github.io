@@ -1,0 +1,134 @@
+/* ==================== Global ==================== */
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#fafafa;
+    color:#333;
+    text-align:center;
+}
+
+/* -------------------- Header -------------------- */
+header{
+    padding:30px 0;
+}
+header img{
+    max-width:250px;      /* πλάτος λογότυπου */
+    height:auto;
+    margin-top:20px;
+}
+
+/* -------------------- Typography -------------------- */
+h1{
+    margin-top:0;
+    font-size:2.2rem;
+    color:#222;
+}
+p{
+    font-size:1.1rem;
+    line-height:1.5;
+    max-width:600px;
+    margin:0 auto;
+}
+
+/* ==================== Navigation ==================== */
+nav{
+    background:#222;
+    padding:10px 0;
+    text-align:left;          /* θα ελέγχεται από το responsive CSS */
+}
+
+/* ----- Responsive (hamburger) ----- */
+.nav{
+    position:relative;
+}
+.nav-toggle{
+    display:none;
+}
+.nav-toggle-label{
+    position:absolute;
+    top:12px;
+    right:15px;
+    display:block;
+    width:30px;
+    height:30px;
+    cursor:pointer;
+}
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after{
+    display:block;
+    background:#fff;
+    height:3px;
+    width:100%;
+    border-radius:2px;
+    position:absolute;
+}
+.nav-toggle-label span{
+    top:50%;
+    transform:translateY(-50%);
+}
+.nav-toggle-label span::before{
+    content:"";
+    top:-10px;
+}
+.nav-toggle-label span::after{
+    content:"";
+    top:10px;
+}
+
+/* Links container – κρύβεται σε κινητά */
+.nav-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+.nav-links a{
+    color:#fff;
+    margin:0 15px;
+    text-decoration:none;
+}
+
+/* Όταν το checkbox είναι checked (menu ανοιχτό) */
+.nav-toggle:checked + .nav-toggle-label + .nav-links{
+    flex-direction:column;
+    align-items:center;
+}
+.nav-toggle:checked + .nav-toggle-label + .nav-links a{
+    margin:10px 0;
+}
+
+/* Tablet/desktop – κρύβουμε το hamburger */
+@media (min-width:600px){
+    .nav-toggle-label{
+        display:none;
+    }
+    .nav-links{
+        display:flex !important;
+        justify-content:center;
+    }
+}
+
+/* ==================== Gallery ==================== */
+.grid{
+    display:grid;
+    gap:15px;
+    padding:20px;
+    max-width:900px;
+    margin:auto;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+}
+.grid img{
+    width:100%;
+    height:auto;
+    border-radius:5px;
+    box-shadow:0 2px 4px rgba(0,0,0,.1);
+}
+
+/* ==================== Footer ==================== */
+footer{
+    margin-top:30px;
+    padding:10px 0;
+    background:#222;
+    color:#ddd;
+}
