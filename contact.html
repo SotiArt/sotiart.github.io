@@ -8,19 +8,17 @@
     <!-- Σύνδεση στο κοινό stylesheet -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Font Awesome (εικονίδια) -->
+    <!-- Font Awesome – σωστή CDN έκδοση (χωρίς integrity) -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-pbK+5XgUuWQzM6eZfF+VZKkZrO5c3N6J+6cK5tHcB9jK5d5e+K5c5Zp+6cK5tHcB9jK5d5e+K5c5Zp+6cK5tHcB9jK5d5e=="
         crossorigin="anonymous"
-        referrerpolicy="no-referrer"
     />
 </head>
 
 <body>
 
-    <!-- ==== Navigation ==== -->
+    <!-- ==== Navigation (ακριβώς όπως στα άλλα αρχεία) ==== -->
     <nav class="nav">
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
@@ -93,13 +91,3 @@
 
 </body>
 </html>
-/* ---- Icons inside contact info ---- */
-.contact-info i {
-    margin-right: 6px;          /* χώρος μεταξύ εικονιδίου & κειμένου */
-    vertical-align: middle;    /* ευθυγράμμιση με το κείμενο */
-    color: #555;               /* προεπιλεγμένο χρώμα – μπορείς να το αλλάξεις */
-}
-
-/* Αν θέλεις διαφορετικό χρώμα για το WhatsApp ή το Email */
-.whatsapp-icon { color: #25D366; }   /* πράσινο WhatsApp */
-.email-icon    { color: #D44638; }   /* κόκκινο email (προαιρετικό) */
