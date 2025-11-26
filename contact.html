@@ -8,7 +8,7 @@
     <!-- Σύνδεση στο κοινό stylesheet -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Font Awesome – σωστή CDN έκδοση (χωρίς integrity) -->
+    <!-- Font Awesome – σωστή CDN (χωρίς integrity) -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -18,7 +18,7 @@
 
 <body>
 
-    <!-- ==== Navigation (ακριβώς όπως στα άλλα αρχεία) ==== -->
+    <!-- ==== Navigation ==== -->
     <nav class="nav">
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
@@ -31,47 +31,45 @@
     </nav>
 
     <!-- ==== Κύριο περιεχόμενο ==== -->
-    <section style="padding:30px 0;">
+    <section style="padding:30px 0; text-align:center;">
         <h1>Επικοινωνία</h1>
 
-        <!-- 1️⃣ Στοιχεία επικοινωνίας με εικονίδια -->
-        <div class="contact-info" style="margin-bottom:30px; line-height:1.8;">
-            <p>
-                <i class="fab fa-whatsapp whatsapp-icon"></i>
-                <strong>WhatsApp:</strong>
-                <a href="https://wa.me/306946273842" target="_blank">+30 694 627 3842</a>
-            </p>
+        <!-- 1️⃣ ΜΟΝΟ ΕΙΚΟΝΙΔΙΑ – χωρίς κείμενο -->
+        <div class="contact-icons" style="margin-top:30px;">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/306946273842"
+               target="_blank"
+               class="icon-link whatsapp-icon"
+               title="WhatsApp: +30 694 627 3842">
+                <i class="fab fa-whatsapp fa-2x"></i>
+            </a>
 
-            <p>
-                <i class="fas fa-envelope email-icon"></i>
-                <strong>Email:</strong>
-                <a href="mailto:sotiartistry@gmail.com">sotiartistry@gmail.com</a>
-            </p>
+            <!-- Email -->
+            <a href="mailto:sotiartistry@gmail.com"
+               class="icon-link email-icon"
+               title="Email: sotiartistry@gmail.com">
+                <i class="fas fa-envelope fa-2x"></i>
+            </a>
 
-            <p>
-                <i class="fas fa-map-marker-alt"></i>
-                <strong>Διεύθυνση:</strong> Basel, Switzerland
-            </p>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/profile.php?id=61572979960172"
+               target="_blank"
+               class="icon-link fb-link"
+               title="Facebook">
+                <i class="fab fa-facebook-f fa-2x"></i>
+            </a>
 
-            <p>
-                <i class="fab fa-facebook-f"></i>
-                <strong>Facebook:</strong>
-                <a class="social-link fb-link"
-                   href="https://www.facebook.com/profile.php?id=61572979960172"
-                   target="_blank">SotiArt</a>
-            </p>
-
-            <p>
-                <i class="fab fa-instagram"></i>
-                <strong>Instagram:</strong>
-                <a class="social-link ig-link"
-                   href="https://www.instagram.com/sotiartistry_/"
-                   target="_blank">SotiArt</a>
-            </p>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/sotiartistry_/"
+               target="_blank"
+               class="icon-link ig-link"
+               title="Instagram">
+                <i class="fab fa-instagram fa-2x"></i>
+            </a>
         </div>
 
         <!-- 2️⃣ Demo φόρμα (δεν στέλνει email – είναι μόνο για εμφάνιση) -->
-        <div class="form-wrapper">
+        <div class="form-wrapper" style="margin-top:40px;">
             <form>
                 <input type="text" name="name" placeholder="Το όνομά σου" required>
                 <input type="email" name="email" placeholder="Το email σου" required>
