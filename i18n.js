@@ -1,18 +1,67 @@
-<script id="translations" type="application/json">
-{
-    "nav_home":        {"el":"Αρχική","en":"Home"},
-    "nav_categories": {"el":"Κατηγορίες","en":"Categories"},
-    "nav_gallery":    {"el":"Gallery","en":"Gallery"},
-    "nav_contact":    {"el":"Επικοινωνία","en":"Contact"},
-    "header_title":   {"el":"Καλώς ήρθατε στο SotiArt!","en":"Welcome to SotiArt!"},
-    "header_desc":    {"el":"Χειροποίητα κοσμήματα & τέχνη. Εξερευνήστε τη συλλογή, εγγραφείτε στο newsletter και αγοράστε online.",
-                       "en":"Hand‑crafted jewellery & art. Explore the collection, join the newsletter and shop online."},
-    "contact_phone_label": {"el":"Τηλέφωνο (WhatsApp):","en":"Phone (WhatsApp):"},
-    "contact_email_label": {"el":"Email:","en":"Email:"},
-    "contact_address_label": {"el":"Διεύθυνση:","en":"Address:"},
-    "contact_form_name": {"el":"Το όνομά σου","en":"Your name"},
-    "contact_form_email": {"el":"Το email σου","en":"Your email"},
-    "contact_form_msg": {"el":"Το μήνυμά σου","en":"Your message"},
-    "contact_form_submit": {"el":"Αποστολή","en":"Send"}
-}
-</script>
+/* i18n.js – απλό client‑side μεταφραστικό σύστημα */
+(() => {
+    const STORAGE_KEY = 'lang';
+    const DEFAULT_LANG = 'el';               // Greek = default
+
+    // -----------------------------------------------------------------
+    // 1️⃣ Φόρτωση του dictionary από το <script id="translations">
+    // -----------------------------------------------------------------
+    const raw = document.getElementById('translations').textContent;
+    const dict = JSON.parse(raw);
+
+    // -----------------------------------------------------------------
+    // 2️⃣ Λειτουργίες αποθήκευσης/ανάκτησης γλώσσας
+    // -----------------------------------------------------------------
+    const getLang = () => localStorage.getItem(STORAGE_KEY) || DEFAULT_LANG;
+    const setLang = (lang) => {
+        localStorage.setItem(STORAGE_KEY, lang);
+        applyTranslations(lang);
+        highlightFlag(lang);
+    };
+
+    // -----------------------------------------------------------------
+    // 3️⃣ Εφαρμογή μεταφράσεων σε όλα τα στοιχεία με data-i18n
+    // -----------------------------------------------------------------
+    const applyTranslations = (lang) => {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            const txt = dict[key] && dict[key][lang];
+            if (!txt) return;
+
+            // Αν είναι INPUT/TEXTAREA, αλλάζουμε placeholder/value
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                if (el.type === 'email' || el.type === 'text' || el.type === 'tel') {
+                    el.placeholder = txt;
+                } else {
+                    el.value = txt;
+                }
+            } else {
+                el.textContent = txt;
+            }
+        });
+    };
+
+    // -----------------------------------------------------------------
+    // 4️⃣ Επισήμανση ενεργής σημαίας
+    // -----------------------------------------------------------------
+    const highlightFlag = (lang) => {
+        document.querySelectorAll('.lang-switcher a')
+                .forEach(a => a.classList.toggle('active', a.dataset.lang === lang));
+    };
+
+    // -----------------------------------------------------------------
+    // 5️⃣ Εκκίνηση – προσθήκη event listeners στα flags
+    // -----------------------------------------------------------------
+    document.addEventListener('DOMContentLoaded', () => {
+        const current = getLang();
+        applyTranslations(current);
+        highlightFlag(current);
+
+        document.querySelectorAll('.lang-switcher a').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                setLang(a.dataset.lang);
+            });
+        });
+    });
+})();
