@@ -132,3 +132,32 @@ footer{
     background:#222;
     color:#ddd;
 }
+/* -------------------------------------------------
+   ΣΤΥΛ ΓΙΑ ΤΑ LINKS ΣΤΗ ΣΕΛΙΔΑ ΕΠΙΚΟΙΝΩΝΙΑΣ
+   ------------------------------------------------- */
+
+/* Γενική εμφάνιση των social links */
+.social-link {
+    color: #ff6600;               /* <-- το χρώμα που θέλεις (π.χ. πορτοκαλί) */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/* Hover – όταν ο χρήστης περάσει το ποντίκι */
+.social-link:hover {
+    color: #ff9900;               /* πιο ανοιχτό χρώμα στο hover */
+}
+
+/* Ειδικό χρώμα για το Facebook (αν θέλεις διαφορετικό) */
+.fb-link { color: #4267B2; }      /* το επίσημο μπλε του Facebook */
+.fb-link:hover { color: #5b85e5; }
+
+/* Ειδικό χρώμα για το Instagram (αν θέλεις διαφορετικό) */
+.ig-link { color: #C13584; }      /* ροζ‑μωβ του Instagram */
+.ig-link:hover { color: #e04aa5; }
+
+/* Μικρό margin μεταξύ των social items */
+.contact-info p {
+    margin: 0.8rem 0;
+}
