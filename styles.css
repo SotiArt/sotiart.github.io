@@ -1,4 +1,6 @@
-/* ==================== Global ==================== */
+/* ==========================================================
+   Γενικά στυλ (απλότητα – κρατήστε ό,τι ήδη έχετε)
+   ========================================================== */
 body{
     margin:0;
     padding:0;
@@ -7,18 +9,14 @@ body{
     color:#333;
     text-align:center;
 }
-
-/* -------------------- Header -------------------- */
 header{
     padding:30px 0;
 }
 header img{
-    max-width:250px;      /* πλάτος λογότυπου */
+    max-width:250px;
     height:auto;
     margin-top:20px;
 }
-
-/* -------------------- Typography -------------------- */
 h1{
     margin-top:0;
     font-size:2.2rem;
@@ -31,14 +29,14 @@ p{
     margin:0 auto;
 }
 
-/* ==================== Navigation ==================== */
+/* ----------------------------------------------------------
+   Navigation (responsive hamburger) – ίδιο όπως πριν
+   ---------------------------------------------------------- */
 nav{
     background:#222;
     padding:10px 0;
-    text-align:left;          /* θα ελέγχεται από το responsive CSS */
+    text-align:left;
 }
-
-/* ----- Responsive (hamburger) ----- */
 .nav{
     position:relative;
 }
@@ -68,16 +66,8 @@ nav{
     top:50%;
     transform:translateY(-50%);
 }
-.nav-toggle-label span::before{
-    content:"";
-    top:-10px;
-}
-.nav-toggle-label span::after{
-    content:"";
-    top:10px;
-}
-
-/* Links container – κρύβεται σε κινητά */
+.nav-toggle-label span::before{content:"";top:-10px;}
+.nav-toggle-label span::after{content:"";top:10px;}
 .nav-links{
     display:flex;
     justify-content:center;
@@ -88,8 +78,6 @@ nav{
     margin:0 15px;
     text-decoration:none;
 }
-
-/* Όταν το checkbox είναι checked (menu ανοιχτό) */
 .nav-toggle:checked + .nav-toggle-label + .nav-links{
     flex-direction:column;
     align-items:center;
@@ -97,19 +85,14 @@ nav{
 .nav-toggle:checked + .nav-toggle-label + .nav-links a{
     margin:10px 0;
 }
-
-/* Tablet/desktop – κρύβουμε το hamburger */
 @media (min-width:600px){
-    .nav-toggle-label{
-        display:none;
-    }
-    .nav-links{
-        display:flex !important;
-        justify-content:center;
-    }
+    .nav-toggle-label{display:none;}
+    .nav-links{display:flex !important;justify-content:center;}
 }
 
-/* ==================== Gallery ==================== */
+/* ----------------------------------------------------------
+   Gallery grid (από πριν)
+   ---------------------------------------------------------- */
 .grid{
     display:grid;
     gap:15px;
@@ -125,190 +108,105 @@ nav{
     box-shadow:0 2px 4px rgba(0,0,0,.1);
 }
 
-/* ==================== Footer ==================== */
+/* ----------------------------------------------------------
+   Footer
+   ---------------------------------------------------------- */
 footer{
     margin-top:30px;
     padding:10px 0;
     background:#222;
     color:#ddd;
 }
-/* -------------------------------------------------
-   ΣΤΥΛ ΓΙΑ ΤΑ LINKS ΣΤΗ ΣΕΛΙΔΑ ΕΠΙΚΟΙΝΩΝΙΑΣ
-   ------------------------------------------------- */
 
-/* Γενική εμφάνιση των social links */
-.social-link {
-    color: #ff6600;               /* <-- το χρώμα που θέλεις (π.χ. πορτοκαλί) */
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.2s ease;
+/* ----------------------------------------------------------
+   LANGUAGE SWITCHER – στρογγυλές σημαίες
+   ---------------------------------------------------------- */
+.lang-switcher{
+    position:fixed;               /* πάνω δεξιά, πάντα ορατό */
+    top:12px;
+    right:12px;
+    display:flex;
+    gap:8px;
+    z-index:1000;
+}
+.lang-switcher a{
+    display:inline-block;
+    width:32px;
+    height:32px;
+    overflow:hidden;
+    border-radius:50%;            /* στρογγυλό */
+    border:2px solid #fff;        /* λευκό περίγραμμα για αντίθεση */
+    box-shadow:0 1px 3px rgba(0,0,0,.3);
+    transition:transform .2s ease, opacity .2s ease;
+}
+.lang-switcher a:hover{
+    transform:scale(1.1);
+    opacity:0.9;
+}
+.lang-switcher a.active{
+    box-shadow:0 0 0 3px #ffcc00;  /* έντονο περίγραμμα για ενεργή γλώσσα */
 }
 
-/* Hover – όταν ο χρήστης περάσει το ποντίκι */
-.social-link:hover {
-    color: #ff9900;               /* πιο ανοιχτό χρώμα στο hover */
+/* ----------------------------------------------------------
+   CONTACT PAGE – εικονίδια + κείμενο (προηγούμενο)
+   ---------------------------------------------------------- */
+.contact-list{
+    max-width:500px;
+    margin:0 auto;
+    text-align:left;
+}
+.contact-item{
+    display:flex;
+    align-items:center;
+    margin:12px 0;
+    font-size:1.1rem;
+}
+.contact-item i{
+    font-size:1.4em;
+    margin-right:10px;
+    color:#555;
+}
+.whatsapp-icon{color:#25D366;}
+.email-icon   {color:#D44638;}
+.fb-icon      {color:#4267B2;}
+.ig-icon      {color:#C13584;}
+.contact-text{
+    text-decoration:none;
+    color:inherit;
+}
+.contact-text:hover{
+    color:#0077cc;
 }
 
-/* Ειδικό χρώμα για το Facebook (αν θέλεις διαφορετικό) */
-.fb-link { color: #4267B2; }      /* το επίσημο μπλε του Facebook */
-.fb-link:hover { color: #5b85e5; }
-
-/* Ειδικό χρώμα για το Instagram (αν θέλεις διαφορετικό) */
-.ig-link { color: #C13584; }      /* ροζ‑μωβ του Instagram */
-.ig-link:hover { color: #e04aa5; }
-/* ---- Icons inside contact info ---- */
-.contact-info i {
-    margin-right: 6px;          /* χώρος μεταξύ εικονιδίου & κειμένου */
-    vertical-align: middle;    /* ευθυγράμμιση με το κείμενο */
-    color: #555;               /* προεπιλεγμένο χρώμα – αλλάξτε το αν θέλετε */
+/* ----------------------------------------------------------
+   FORM (από πριν) – μικρή βελτίωση
+   ---------------------------------------------------------- */
+.form-wrapper{
+    max-width:500px;
+    margin:30px auto;
+    padding:20px;
+    background:#fff;
+    border-radius:5px;
+    box-shadow:0 2px 6px rgba(0,0,0,.1);
 }
-
-/* Χρώμα για WhatsApp και Email (προαιρετικό) */
-.whatsapp-icon { color: #25D366; }   /* πράσινο WhatsApp */
-.email-icon    { color: #D44638; }   /* κόκκινο email */
-/* Μικρό margin μεταξύ των social items */
-.contact-info p {
-    margin: 0.8rem 0;
+.form-wrapper input,
+.form-wrapper textarea{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:4px;
+    font-size:1rem;
 }
-/* ---- Εικονίδια επικοινωνίας (μόνο icons) ---- */
-.contact-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;               /* απόσταση μεταξύ των εικονιδίων */
+.form-wrapper button{
+    background:#222;
+    color:#fff;
+    padding:10px 20px;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+    font-size:1rem;
 }
-
-.icon-link {
-    color: #555;            /* προεπιλεγμένο χρώμα */
-    transition: color 0.2s ease;
-}
-
-/* Χρώματα ανά πλατφόρμα (προαιρετικά) */
-.whatsapp-icon { color: #25D366; }   /* πράσινο WhatsApp */
-.email-icon    { color: #D44638; }   /* κόκκινο email */
-.fb-link       { color: #4267B2; }   /* μπλε Facebook */
-.ig-link       { color: #C13584; }   /* ροζ‑μωβ Instagram */
-
-/* Hover – ελαφριά αλλαγή φωτεινότητας */
-.icon-link:hover {
-    opacity: 0.8;
-}
-/* -------------------------------------------------
-   ΣΤΥΛ ΓΙΑ ΤΑ ΣΤΟΙΧΕΙΑ ΕΠΙΚΟΙΝΩΝΙΑΣ (εικονίδιο + κείμενο)
-   ------------------------------------------------- */
-.contact-list {
-    /* κέντρο και περιορισμένο πλάτος – ήδη στο HTML, αλλά εδώ για fallback */
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.contact-item {
-    display: flex;               /* εικονίδιο και κείμενο στην ίδια γραμμή */
-    align-items: center;         /* κατακόρυφη στοίχιση */
-    margin: 12px 0;              /* απόσταση μεταξύ των γραμμών */
-    font-size: 1.1rem;
-    color: #333;
-}
-
-/* Μέγεθος εικονιδίων – 1.4em ≈ 22‑24 px (προσαρμόσιμο) */
-.contact-item i {
-    font-size: 1.4em;
-    margin-right: 10px;          /* χώρος μεταξύ εικονιδίου & κειμένου */
-    color: #555;                 /* προεπιλεγμένο χρώμα */
-}
-
-/* Χρώματα ανά πλατφόρμα (προαιρετικά) */
-.whatsapp-icon { color: #25D366; }   /* πράσινο WhatsApp */
-.email-icon    { color: #D44638; }   /* κόκκινο email */
-.fb-icon       { color: #4267B2; }   /* μπλε Facebook */
-.ig-icon       { color: #C13584; }   /* ροζ‑μωβ Instagram */
-
-/* Στυλ για το κείμενο (links) */
-.contact-text {
-    text-decoration: none;
-    color: inherit;               /* κληρονομεί το χρώμα του .contact-item */
-    transition: color 0.2s ease;
-}
-
-/* Hover effect στα links */
-.contact-text:hover {
-    color: #0077cc;               /* ελαφρύ μπλε όταν περνάει το ποντίκι */
-}
-
-/* Αν θέλεις τα links να ανοίγουν σε νέο tab (για email/whatsapp) */
-.contact-text[target="_blank"] {
-    cursor: pointer;
-}
-/* -------------------------------------------------
-   ΣΤΥΛ ΓΙΑ ΤΑ ΣΤΟΙΧΕΙΑ ΕΠΙΚΟΙΝΩΝΙΑΣ (εικονίδιο + κείμενο)
-   ------------------------------------------------- */
-.contact-list {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.contact-item {
-    display: flex;               /* εικονίδιο + κείμενο στην ίδια γραμμή */
-    align-items: center;         /* κατακόρυφη στοίχιση */
-    margin: 12px 0;              /* απόσταση μεταξύ των γραμμών */
-    font-size: 1.1rem;
-    color: #333;
-}
-
-/* Μέγεθος εικονιδίων */
-.contact-item i {
-    font-size: 1.4em;            /* περίπου 22‑24 px */
-    margin-right: 10px;          /* χώρος μεταξύ εικονιδίου & κειμένου */
-    color: #555;                 /* προεπιλεγμένο χρώμα */
-}
-
-/* Χρώματα ανά πλατφόρμα (προαιρετικά) */
-.whatsapp-icon { color: #25D366; }   /* πράσινο WhatsApp */
-.email-icon    { color: #D44638; }   /* κόκκινο email */
-.fb-icon       { color: #4267B2; }   /* μπλε Facebook */
-.ig-icon       { color: #C13584; }   /* ροζ‑μωβ Instagram */
-
-/* Στυλ για το κείμενο (links) */
-.contact-text {
-    text-decoration: none;
-    color: inherit;               /* κληρονομεί το χρώμα του .contact-item */
-    transition: color 0.2s ease;
-}
-
-/* Hover effect στα links */
-.contact-text:hover {
-    color: #0077cc;               /* ελαφρύ μπλε όταν περνάει το ποντίκι */
-}
-
-/* Αν θέλεις τα links να ανοίγουν σε νέο tab (για WhatsApp, Facebook, Instagram) */
-.contact-text[target="_blank"] {
-    cursor: pointer;
-}
-/* -------------------------------------------------
-   Language switcher (flags)
-   ------------------------------------------------- */
-.lang-switcher {
-    display: flex;
-    gap: 12px;
-    justify-content: center;      /* κεντράρισμα */
-    margin: 20px 0;
-}
-
-/* Κάθε σημαία είναι link */
-.lang-switcher a {
-    display: inline-block;
-    width: 32px;
-    height: 24px;
-    overflow: hidden;
-}
-
-/* Χρήση flag-icons CDN */
-.flag-icon {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Optional: μικρό hover effect */
-.lang-switcher a:hover .flag-icon {
-    opacity: 0.8;
+.form-wrapper button:hover{
+    background:#444;
 }
