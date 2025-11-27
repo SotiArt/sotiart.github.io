@@ -14,6 +14,7 @@
 
 <body>
 
+    <!-- Navigation -->
     <nav class="nav">
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
@@ -22,14 +23,17 @@
             <a href="categories.html" data-i18n="nav_categories">Κατηγορίες</a>
             <a href="gallery.html"    data-i18n="nav_gallery">Gallery</a>
             <a href="contact.html"    data-i18n="nav_contact">Επικοινωνία</a>
+            <a href="about.html"      data-i18n="nav_about">About</a>
         </div>
     </nav>
 
+    <!-- Language Switcher -->
     <div class="lang-switcher">
         <a href="#" data-lang="el" class="active" title="Ελληνικά"><span class="flag-icon flag-icon-gr"></span></a>
         <a href="#" data-lang="en" title="English"><span class="flag-icon flag-icon-gb"></span></a>
     </div>
 
+    <!-- Main Content -->
     <section style="padding:30px 0;">
         <h1 data-i18n="cat_title">Κατηγορίες προϊόντων</h1>
 
@@ -37,25 +41,34 @@
             <li data-i18n="cat_necklaces">Κολιέ</li>
             <li data-i18n="cat_bracelets">Βραχιόλια</li>
             <li data-i18n="cat_earrings">Σκουλαρίκια</li>
-            <li data-i18n="cat_gifts">Δώρα</li>
+            <li data-i18n="cat_rings">Δαχτυλίδια</li>
+            <li data-i18n="cat_ceramics">Κεραμικά</li>
+            <li data-i18n="cat_pyrography">Πυρογράφος</li>
+            <li data-i18n="cat_collage">Κολλάζ / Κάρτες</li>
         </ul>
     </section>
 
+    <!-- Footer -->
     <footer>
         © <script>document.write(new Date().getFullYear())</script> — SotiArt. Όλα τα δικαιώματα διατηρούνται.
     </footer>
 
+    <!-- Translations JSON -->
     <script id="translations" type="application/json">
     {
         "nav_home":        {"el":"Αρχική","en":"Home"},
         "nav_categories": {"el":"Κατηγορίες","en":"Categories"},
         "nav_gallery":    {"el":"Gallery","en":"Gallery"},
         "nav_contact":    {"el":"Επικοινωνία","en":"Contact"},
+        "nav_about":      {"el":"About","en":"About"},
         "cat_title":      {"el":"Κατηγορίες προϊόντων","en":"Product categories"},
         "cat_necklaces":  {"el":"Κολιέ","en":"Necklaces"},
         "cat_bracelets":  {"el":"Βραχιόλια","en":"Bracelets"},
         "cat_earrings":   {"el":"Σκουλαρίκια","en":"Earrings"},
-        "cat_gifts":      {"el":"Δώρα","en":"Gifts"}
+        "cat_rings":      {"el":"Δαχτυλίδια","en":"Rings"},
+        "cat_ceramics":   {"el":"Κεραμικά","en":"Ceramics"},
+        "cat_pyrography":{"el":"Πυρογράφος","en":"Pyrography"},
+        "cat_collage":    {"el":"Κολλάζ / Κάρτες","en":"Collage / Cards"}
     }
     </script>
 </body>
