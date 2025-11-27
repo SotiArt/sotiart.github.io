@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SotiArt</title>
 
-    <!-- Κοινό stylesheet -->
+    <!-- Common stylesheet -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Flag‑icon‑css (στρογγυλές σημαίες) -->
+    <!-- Flag‑icon‑css (circular flags) -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.7.0/css/flag-icons.min.css"
           crossorigin="anonymous">
 
-    <!-- i18n script -->
+    <!-- Language‑toggle script -->
     <script defer src="i18n.js"></script>
 </head>
 
 <body>
 
-    <!-- ==== Navigation ==== -->
+    <!-- ===================== Navigation ===================== -->
     <nav class="nav">
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
@@ -28,10 +28,11 @@
             <a href="categories.html" data-i18n="nav_categories">Κατηγορίες</a>
             <a href="gallery.html"    data-i18n="nav_gallery">Gallery</a>
             <a href="contact.html"    data-i18n="nav_contact">Επικοινωνία</a>
+            <a href="about.html"      data-i18n="nav_about">About</a>
         </div>
     </nav>
 
-    <!-- ==== Language Switcher (στρογγυλές σημαίες) ==== -->
+    <!-- ===================== Language Switcher ===================== -->
     <div class="lang-switcher">
         <a href="#" data-lang="el" class="active" title="Ελληνικά">
             <span class="flag-icon flag-icon-gr"></span>
@@ -41,29 +42,28 @@
         </a>
     </div>
 
-    <!-- ==== Header ==== -->
+    <!-- ===================== Header ===================== -->
     <header>
         <img src="sotiart-logo.jpeg" alt="SotiArt Logo">
         <h1 data-i18n="index_welcome">Καλώς ήρθατε στο SotiArt!</h1>
         <p data-i18n="index_desc">
-            Χειροποίητα κοσμήματα & τέχνη. Εξερευνήστε τη συλλογή, εγγραφείτε στο newsletter και αγοράστε online.
+            Χειροποίητα κοσμήματα &amp; τέχνη. Εξερευνήστε τη συλλογή, εγγραφείτε στο newsletter και αγοράστε online.
         </p>
     </header>
 
-    <!-- ==== Footer ==== -->
+    <!-- ===================== Footer ===================== -->
     <footer>
         © <script>document.write(new Date().getFullYear())</script> — SotiArt. Όλα τα δικαιώματα διατηρούνται.
     </footer>
 
-    <!-- -------------------------------------------------
-         Translations JSON (πρέπει να είναι το τελευταίο πριν </body>)
-         ------------------------------------------------- -->
+    <!-- ===================== Translations JSON ===================== -->
     <script id="translations" type="application/json">
     {
         "nav_home":        {"el":"Αρχική","en":"Home"},
         "nav_categories": {"el":"Κατηγορίες","en":"Categories"},
         "nav_gallery":    {"el":"Gallery","en":"Gallery"},
         "nav_contact":    {"el":"Επικοινωνία","en":"Contact"},
+        "nav_about":      {"el":"About","en":"About"},
         "index_welcome":  {"el":"Καλώς ήρθατε στο SotiArt!","en":"Welcome to SotiArt!"},
         "index_desc":     {"el":"Χειροποίητα κοσμήματα & τέχνη. Εξερευνήστε τη συλλογή, εγγραφείτε στο newsletter και αγοράστε online.",
                            "en":"Hand‑crafted jewellery & art. Explore the collection, join the newsletter and shop online."}
