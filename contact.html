@@ -5,90 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Επικοινωνία – SotiArt</title>
 
-    <!-- Σύνδεση στο κοινό stylesheet -->
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Font Awesome – σωστή CDN (χωρίς integrity) -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        crossorigin="anonymous"
-    />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.7.0/css/flag-icons.min.css"
+          crossorigin="anonymous">
+    <script defer src="i18n.js"></script>
 </head>
 
 <body>
 
-    <!-- ==== Navigation ==== -->
+    <!-- Navigation -->
     <nav class="nav">
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
         <div class="nav-links">
-            <a href="index.html">Αρχική</a>
-            <a href="categories.html">Κατηγορίες</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="contact.html">Επικοινωνία</a>
+            <a href="index.html"      data-i18n="nav_home">Αρχική</a>
+            <a href="categories.html" data-i18n="nav_categories">Κατηγορίες</a>
+            <a href="gallery.html"    data-i18n="nav_gallery">Gallery</a>
+            <a href="contact.html"    data-i18n="nav_contact">Επικοινωνία</a>
+            <a href="about.html"      data-i18n="nav_about">About</a>
         </div>
     </nav>
 
-    <!-- ==== Κύριο περιεχόμενο ==== -->
-    <section style="padding:30px 0; text-align:center;">
-        <h1>Επικοινωνία</h1>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <a href="#" data-lang="el" class="active" title="Ελληνικά"><span class="flag-icon flag-icon-gr"></span></a>
+        <a href="#" data-lang="en" title="English"><span class="flag-icon flag-icon-gb"></span></a>
+    </div>
 
-        <!-- 1️⃣ Στοιχεία επικοινωνίας – εικονίδιο + κείμενο -->
+    <!-- Contact Details -->
+    <section style="padding:30px 0;">
+        <h1 data-i18n="contact_title">Επικοινωνία</h1>
+
         <div class="contact-list" style="margin-top:30px; max-width:500px; margin:auto;">
-            <!-- WhatsApp -->
             <p class="contact-item">
                 <i class="fab fa-whatsapp whatsapp-icon"></i>
-                <a href="https://wa.me/306946273842"
-                   target="_blank"
-                   class="contact-text">
-                    +30 694 627 3842
-                </a>
+                <a href="https://wa.me/306946273842" target="_blank" class="contact-text" data-i18n="contact_phone">+30 694 627 3842</a>
             </p>
 
-            <!-- Email -->
             <p class="contact-item">
                 <i class="fas fa-envelope email-icon"></i>
-                <a href="mailto:sotiartistry@gmail.com"
-                   class="contact-text">
-                    sotiartistry@gmail.com
-                </a>
+                <a href="mailto:sotiartistry@gmail.com" class="contact-text" data-i18n="contact_email">sotiartistry@gmail.com</a>
             </p>
 
-            <!-- Διεύθυνση (δεν είναι link) -->
             <p class="contact-item">
                 <i class="fas fa-map-marker-alt"></i>
-                <span class="contact-text">Basel, Switzerland</span>
+                <span class="contact-text" data-i18n="contact_address">Basel, Switzerland</span>
             </p>
 
-            <!-- Facebook -->
             <p class="contact-item">
                 <i class="fab fa-facebook-f fb-icon"></i>
                 <a href="https://www.facebook.com/profile.php?id=61572979960172"
                    target="_blank"
-                   class="contact-text">
-                    SotiArt
-                </a>
+                   class="contact-text"
+                   data-i18n="contact_facebook">SotiArt</a>
             </p>
 
-            <!-- Instagram -->
             <p class="contact-item">
                 <i class="fab fa-instagram ig-icon"></i>
                 <a href="https://www.instagram.com/sotiartistry_/"
                    target="_blank"
-                   class="contact-text">
-                    SotiArt
-                </a>
+                   class="contact-text"
+                   data-i18n="contact_instagram">SotiArt</a>
             </p>
         </div>
 
-        <!-- 2️⃣ Demo φόρμα (δεν στέλνει email – είναι μόνο για εμφάνιση) -->
+        <!-- Demo contact form (does not actually send) -->
         <div class="form-wrapper" style="margin-top:40px;">
             <form>
-                <input type="text" name="name" placeholder="Το όνομά σου" required>
-                <input type="email" name="email" placeholder="Το email σου" required>
-                <textarea name="message" rows="4" placeholder="Το μήνυμά σου" required></textarea>
-                <button type="submit">Αποστολή</button>
+                <input type="text" name="name" placeholder="Το όνομά σου" data-i18n="contact_form_name" required>
+                <input type="email" name="email" placeholder="Το email σου" data-i18n="contact_form_email" required>
+                <textarea name="message" rows="4" placeholder="Το μήνυμά σου" data-i18n="contact_form_msg" required></textarea>
+                <button type="submit" data-i18n="contact_form_send">Αποστολή</button>
             </form>
             <p style="font-size:0.9rem;color:#777;margin-top:10px;">
                 *(Αυτή η φόρμα είναι μόνο demo. Για πραγματική αποστολή, θα χρειαστείς υπηρεσία όπως Formspree, Netlify Forms ή Google Forms.)*
@@ -96,10 +84,15 @@
         </div>
     </section>
 
-    <!-- ==== Footer ==== -->
+    <!-- Footer -->
     <footer>
         © <script>document.write(new Date().getFullYear())</script> — SotiArt. Όλα τα δικαιώματα διατηρούνται.
     </footer>
 
-</body>
-</html>
+    <!-- Translations JSON -->
+    <script id="translations" type="application/json">
+    {
+        "nav_home":        {"el":"Αρχική","en":"Home"},
+        "nav_categories": {"el":"Κατηγορίες","en":"Categories"},
+        "nav_gallery":    {"el":"Gallery","en":"Gallery"},
+        "nav_contact":    {"el
