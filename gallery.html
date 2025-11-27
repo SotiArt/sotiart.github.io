@@ -14,4 +14,53 @@
 
 <body>
 
-    <nav class="
+    <!-- Navigation -->
+    <nav class="nav">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+        <div class="nav-links">
+            <a href="index.html"      data-i18n="nav_home">Αρχική</a>
+            <a href="categories.html" data-i18n="nav_categories">Κατηγορίες</a>
+            <a href="gallery.html"    data-i18n="nav_gallery">Gallery</a>
+            <a href="contact.html"    data-i18n="nav_contact">Επικοινωνία</a>
+            <a href="about.html"      data-i18n="nav_about">About</a>
+        </div>
+    </nav>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <a href="#" data-lang="el" class="active" title="Ελληνικά"><span class="flag-icon flag-icon-gr"></span></a>
+        <a href="#" data-lang="en" title="English"><span class="flag-icon flag-icon-gb"></span></a>
+    </div>
+
+    <!-- Main Content -->
+    <section style="padding:30px 0; text-align:center;">
+        <h1 data-i18n="gallery_title">Gallery – Δείγματα δημιουργίας</h1>
+
+        <div class="grid">
+            <!-- Placeholder images – replace with your own when ready -->
+            <img src="https://via.placeholder.com/300x300?text=Κολιέ+1" alt="Κολιέ 1">
+            <img src="https://via.placeholder.com/300x300?text=Βραχιόλι+1" alt="Βραχιόλι 1">
+            <img src="https://via.placeholder.com/300x300?text=Σκουλαρίκι+1" alt="Σκουλαρίκι 1">
+            <img src="https://via.placeholder.com/300x300?text=Δαχτυλίδι+1" alt="Δαχτυλίδι 1">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        © <script>document.write(new Date().getFullYear())</script> — SotiArt. Όλα τα δικαιώματα διατηρούνται.
+    </footer>
+
+    <!-- Translations JSON -->
+    <script id="translations" type="application/json">
+    {
+        "nav_home":        {"el":"Αρχική","en":"Home"},
+        "nav_categories": {"el":"Κατηγορίες","en":"Categories"},
+        "nav_gallery":    {"el":"Gallery","en":"Gallery"},
+        "nav_contact":    {"el":"Επικοινωνία","en":"Contact"},
+        "nav_about":      {"el":"About","en":"About"},
+        "gallery_title":  {"el":"Gallery – Δείγματα δημιουργίας","en":"Gallery – Sample works"}
+    }
+    </script>
+</body>
+</html>
